@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 import { NotfoundComponent } from './demo/components/notfound/notfound.component';
 import { AppLayoutComponent } from "./layout/app.layout.component";
 import {HomepageComponent} from "./pages/homepage/homepage.component";
+import {LoginComponent} from "./pages/login/login.component";
 
 @NgModule({
     imports: [
         RouterModule.forRoot([
-                {path: '', component: HomepageComponent,}
+                {path: '', component: HomepageComponent,},
+                {path: 'login', component: LoginComponent,}
 // {
             //     path: '', component: AppLayoutComponent,
             //     children: [
