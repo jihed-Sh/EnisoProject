@@ -12,10 +12,11 @@ import { IconService } from './demo/service/icon.service';
 import { NodeService } from './demo/service/node.service';
 import { PhotoService } from './demo/service/photo.service';
 import { HomepageComponent } from './pages/homepage/homepage.component';
+import { WorkerListComponent } from './ghaith_components/worker-list/worker-list.component';
 
 @NgModule({
     declarations: [
-        AppComponent, NotfoundComponent, HomepageComponent
+        AppComponent, NotfoundComponent, HomepageComponent, WorkerListComponent
     ],
     imports: [
         AppRoutingModule,

@@ -1,0 +1,12 @@
+package com.ps.demo.dao;
+
+
+import com.ps.demo.Entity.WorkerCategory;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+import org.springframework.web.bind.annotation.CrossOrigin;
+
+@CrossOrigin("http://localhost:4200")
+@RepositoryRestResource(collectionResourceRel = "WorkerCategory", path = "worker-category")
+public interface WorkerCategoryRepository extends JpaRepository<WorkerCategory,Long> {
+}
