@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>khadamni</title>
+    </head>
+    <body>
+        <!-- MENU SIDEBAR-->
+		<aside class="menu-sidebar d-none d-lg-block">
+            <div class="logo">
+				<a>
+					<img src="assets/Logo_ENISo_Tunisie.svg_-1140x600.png" alt="khadamni" class="img-responsive" width="100px">
+				</a>
+			</div>
+			<div class="menu-sidebar-content js-scrollbar1">
+				<nav class="navbar-sidebar">
+					<ul class="list-unstyled navbar-list">
+						<li>
+							<a routerLink="/category/1" routerLinkActive="active-link">Macons</a>
+						</li>
+						<li>
+							<a  routerLink="/category/2" routerLinkActive="active-link">House keepers</a>
+						</li>
+						<li>
+							<a  routerLink="/category/3" routerLinkActive="active-link">Mechanics</a>
+						</li>
+						<li>
+							<a  routerLink="/category/4" routerLinkActive="active-link"> House Painters</a>
+						</li>
+                        <li>
+							<a  routerLink="/category/5" routerLinkActive="active-link"> Plombiers</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</aside>
+		<!-- END MENU SIDEBAR-->
+
+		<!-- PAGE CONTAINER-->
+		<div class="page-container">
+			<!-- HEADER DESKTOP-->
+			<header class="header-desktop">
+				<div class="section-content section-content-p30">
+					<div class="container-fluid">
+						<div class="header-wrap">
+							<form class="form-header" onsubmit="return false;" method="GET">
+								<input class="au-input au-input-xl" type="text" name="search"
+									placeholder="Search for data ..." />
+								<button class="au-btn-submit" type="submit">
+									Search
+								</button>
+							</form>
+							<div class="cart-area d-n">
+                                <a href="">
+									 <i class="fa fa-shopping-cart"
+										aria-hidden="true"></i>
+                                </a>
+							</div>
+						</div>
+						<div class="account-wrap"></div>
+					</div>
+				</div>
+			</header>
+            <!-- END HEADER DESKTOP-->
+            <!-- MAIN CONTENT-->
+			<div class="main-content">
+				<table class="table">
+                    <thead class="thead-dark">
+                       <tr>
+                            <th></th>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Price</th>
+                            <th>Date Available</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+ 
+                   <tbody>
+                        <tr *ngFor="let tempWorker of workers">
+                           <td class="align-middle">
+                              <img src="{{tempWorker.imageUrl}}" height="50px">
+                            </td>
+                              <td class="align-middle">{{tempWorker.name}}</td>
+                            <td class="align-middle">{{tempWorker.description}}</td>
+                             <td class="align-middle">{{tempWorker.dayly_price}} DT </td>
+                             <td class="align-middle">{{tempWorker.dateAvailable.slice(0,10)}}</td>
+                             <td class="align-middle">
+                                <button class="au-btn-submit" type="submit">
+                                Asign
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+			</div>
+			
+
+		    <!-- END MAIN CONTENT-->
+        
+        </div>
+        <!-- END PAGE CONTAINER-->
+
+        <footer>
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Help</a></li>
+            </ul>
+        </footer>
+    
+        
+    
+  
+    
+    </body>
+</html>
+
+<!--div class="Container">
+<p *ngFor="let tempWorker of workers" class="mb-3 mt-3">
+     {{ tempWorker.name }} : has {{tempWorker.description}} and he can costs you only {{tempWorker.dayly_price}} DT   
+
+</p>
+</div-->
