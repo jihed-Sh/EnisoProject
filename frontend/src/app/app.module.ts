@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -13,20 +13,38 @@ import { NodeService } from './demo/service/node.service';
 import { PhotoService } from './demo/service/photo.service';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { WorkerListComponent } from './ghaith_components/worker-list/worker-list.component';
+import { HttpClientModule } from '@angular/common/http';
+import { WorkerService } from './services/worker.service';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { Routes,RouterModule} from '@angular/router'
+
+const routes :Routes = [
+    {path: 'category/:id' , component: WorkerListComponent},
+    {path: 'category' , component: WorkerListComponent},
+    {path: 'workers' , component: WorkerListComponent},
+    {path: '' , redirectTo: '/workers' , pathMatch: 'full'},
+    {path: '**' , redirectTo: '/workers', pathMatch: 'full'},
+];
 
 @NgModule({
     declarations: [
-        AppComponent, NotfoundComponent, HomepageComponent, WorkerListComponent
+        AppComponent, WorkerListComponent, NotfoundComponent, 
     ],
     imports: [
+        RouterModule.forRoot(routes),
         AppRoutingModule,
-        AppLayoutModule
+        AppLayoutModule,
+        HttpClientModule,
+        BrowserModule
+        
     ],
     providers: [
         { provide: LocationStrategy, useClass: HashLocationStrategy },
         CountryService, CustomerService, EventService, IconService, NodeService,
-        PhotoService, ProductService
+        PhotoService, WorkerService,ProductService
     ],
-    bootstrap: [AppComponent]
+    bootstrap: [AppComponent],
+    schemas: [ NO_ERRORS_SCHEMA ]
 })
 export class AppModule { }
