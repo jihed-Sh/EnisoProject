@@ -17,5 +17,6 @@ public interface WorkerRepository extends JpaRepository<Worker,Long> {
     // (SELECT * FROM worker where categoru_id=?
     //http://localhost:8080/api/workers/search/findByCategoryId?id=1
     Page<Worker> findByCategoryId(@RequestParam("id") long id, Pageable pageable);
+    Page<Worker> findByNameContaining(@RequestParam("name") String name , Pageable pageable);
 
 }

@@ -20,8 +20,8 @@ public class Worker {
     @JoinColumn(name = "category_id", nullable = false)
     private WorkerCategory category;
 
-    @Column(name = "Name")
-    private String Name;
+    @Column(name = "name")
+    private String name;
 
     @Column(name = "Domain")
     private String Domain;

@@ -11,27 +11,9 @@
 					<img src="assets/Logo_ENISo_Tunisie.svg_-1140x600.png" alt="khadamni" class="img-responsive" width="100px">
 				</a>
 			</div>
-			<div class="menu-sidebar-content js-scrollbar1">
-				<nav class="navbar-sidebar">
-					<ul class="list-unstyled navbar-list">
-						<li>
-							<a routerLink="/category/1" routerLinkActive="active-link">Macons</a>
-						</li>
-						<li>
-							<a  routerLink="/category/2" routerLinkActive="active-link">House keepers</a>
-						</li>
-						<li>
-							<a  routerLink="/category/3" routerLinkActive="active-link">Mechanics</a>
-						</li>
-						<li>
-							<a  routerLink="/category/4" routerLinkActive="active-link"> House Painters</a>
-						</li>
-                        <li>
-							<a  routerLink="/category/5" routerLinkActive="active-link"> Plombiers</a>
-						</li>
-					</ul>
-				</nav>
-			</div>
+
+			<app-worker-category-menu></app-worker-category-menu>
+			
 		</aside>
 		<!-- END MENU SIDEBAR-->
 
@@ -42,13 +24,7 @@
 				<div class="section-content section-content-p30">
 					<div class="container-fluid">
 						<div class="header-wrap">
-							<form class="form-header" onsubmit="return false;" method="GET">
-								<input class="au-input au-input-xl" type="text" name="search"
-									placeholder="Search for data ..." />
-								<button class="au-btn-submit" type="submit">
-									Search
-								</button>
-							</form>
+							<app-search></app-search>
 							<div class="cart-area d-n">
                                 <a href="">
 									 <i class="fa fa-shopping-cart"
@@ -90,6 +66,11 @@
                                 </button>
                             </td>
                         </tr>
+
+						<!-- of no workers found then display a message-->
+						<div *ngIf="workers?.length == 0" class="alert alert-warning col-md-12" role="alert">
+							No Workers found.
+						</div>
                     </tbody>
 
                 </table>

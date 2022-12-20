@@ -11,15 +11,17 @@ import { EventService } from './demo/service/event.service';
 import { IconService } from './demo/service/icon.service';
 import { NodeService } from './demo/service/node.service';
 import { PhotoService } from './demo/service/photo.service';
-import { HomepageComponent } from './pages/homepage/homepage.component';
 import { WorkerListComponent } from './ghaith_components/worker-list/worker-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { WorkerService } from './services/worker.service';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { Routes,RouterModule} from '@angular/router'
+import { Routes,RouterModule} from '@angular/router';
+import { WorkerCategoryMenuComponent } from './ghaith_components/worker-category-menu/worker-category-menu.component'
+import { SearchComponent } from './ghaith_components/search/search.component';
 
 const routes :Routes = [
+    {path: 'search/:keyword' , component: WorkerListComponent},
     {path: 'category/:id' , component: WorkerListComponent},
     {path: 'category' , component: WorkerListComponent},
     {path: 'workers' , component: WorkerListComponent},
@@ -29,7 +31,7 @@ const routes :Routes = [
 
 @NgModule({
     declarations: [
-        AppComponent, WorkerListComponent, NotfoundComponent, 
+        AppComponent, WorkerCategoryMenuComponent, WorkerListComponent, NotfoundComponent, SearchComponent
     ],
     imports: [
         RouterModule.forRoot(routes),

@@ -13,6 +13,8 @@ export class WorkerListComponent implements OnInit {
 
   workers!: Worker[];
   currentCategoryId!: number;
+  searchMode!: boolean;
+
   constructor(private workerService: WorkerService,private route:ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -23,7 +25,35 @@ export class WorkerListComponent implements OnInit {
 
   listWorkers() {
 
+    this.searchMode= this.route.snapshot.paramMap.has('keyword');
+    console.log("search mode is " + `${this.searchMode}`);
 
+    if (this.searchMode){
+
+      this.handleSearchWorkers();
+    }
+    else if(this.searchMode==false){
+      this.handleListWorkers();
+    }
+   
+    
+  }
+  
+  handleSearchWorkers(){
+    const theKeyword: string = this.route.snapshot.paramMap.get('keyword')!;
+
+    // new search for the workers using keyword
+    this.workerService.searchWorkers(theKeyword).subscribe(
+      data => {
+        
+        this.workers= data ;
+      }
+    );
+
+  }
+
+  handleListWorkers(){
+    
     //check if "id" parameter is available
     const hasCategoryId: boolean = this.route.snapshot.paramMap.has('id');
 
@@ -41,7 +71,7 @@ export class WorkerListComponent implements OnInit {
         this.workers = data;
       }
     )
-  }
 
+  }
 }
 
