@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { WorkerService } from 'src/app/services/worker.service';
 import { Worker } from '../../common/worker'
-
 @Component({
   selector: 'app-worker-list',
   templateUrl: './worker-list.component.html',
@@ -72,6 +71,17 @@ export class WorkerListComponent implements OnInit {
       }
     )
 
+  }
+  doSend(value: string){
+    console.log(`value=${value}`);
+    // -- To Do -- a function that sends an email to the worker
+      var link = `${value}`
+                 + "?cc=ghaithmeftah@gmail.com"
+                 + "&subject=" + escape("This is my subject")
+                 + "&body=" + escape("I have some work for you")
+      ;
+      window.location.href = link;
+    
   }
 }
 

@@ -1,15 +1,3 @@
-/*div {
-    display: block;
-    width: 80%;
-    margin: 40px;
-    padding: 10px;
-    text-align: left;
-  }
-
-input{
-    padding-left: 40px;
-}*/
-
 /* 
  * ----------------------------
  * Common CSS
@@ -114,15 +102,6 @@ a,a:hover{
 /*Layout Css*/
 .section-content-p35{
     padding:0 35px
-}
-
-.alert{
-    padding-left: 15px;
-    padding-right:400px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    margin: 35px;
-    
 }
 
 .page-wrapper{
@@ -301,9 +280,9 @@ input.au-input.au-input-xl{
 
 .au-btn-submit{
     position:relative;
-    right:0;
-    padding:ceil($number: 10px) 30px;
-    min-width:95px;
+    right: 0;
+    padding: ceil($number: 20px);
+    min-width:130px;
     color:#fff;
     border:1px solid #205b8d;
     -webkit-border-radius:3px;

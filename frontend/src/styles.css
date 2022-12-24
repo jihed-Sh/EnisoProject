@@ -279,8 +279,9 @@ input.au-input.au-input-xl{
 }
 
 .au-btn-submit{
-    position:relative;
-    right:0;
+    position:absolute;
+    padding-left: 30px;
+    right: 0;
     min-width:95px;
     color:#fff;
     border:1px solid #205b8d;

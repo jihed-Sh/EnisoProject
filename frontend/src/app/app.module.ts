@@ -19,8 +19,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { Routes,RouterModule} from '@angular/router';
 import { WorkerCategoryMenuComponent } from './ghaith_components/worker-category-menu/worker-category-menu.component'
 import { SearchComponent } from './ghaith_components/search/search.component';
+import { CheckoutComponent } from './ghaith_components/checkout/checkout.component';
+
+import { ReactiveFormsModule } from '@angular/forms';
 
 const routes :Routes = [
+    {path: 'checkout',component: CheckoutComponent},
     {path: 'search/:keyword' , component: WorkerListComponent},
     {path: 'category/:id' , component: WorkerListComponent},
     {path: 'category' , component: WorkerListComponent},
@@ -31,14 +35,15 @@ const routes :Routes = [
 
 @NgModule({
     declarations: [
-        AppComponent, WorkerCategoryMenuComponent, WorkerListComponent, NotfoundComponent, SearchComponent
+        AppComponent, WorkerCategoryMenuComponent, WorkerListComponent, NotfoundComponent, SearchComponent, CheckoutComponent
     ],
     imports: [
         RouterModule.forRoot(routes),
         AppRoutingModule,
         AppLayoutModule,
         HttpClientModule,
-        BrowserModule
+        BrowserModule,
+        ReactiveFormsModule,
         
     ],
     providers: [
