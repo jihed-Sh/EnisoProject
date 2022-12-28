@@ -8,8 +8,8 @@ import {LoginComponent} from "./pages/login/login.component";
 @NgModule({
     imports: [
         RouterModule.forRoot([
-                {path: '', component: HomepageComponent,},
-                {path: 'login', component: LoginComponent,}
+              //  {path: '', component: HomepageComponent,},
+                {path: '', component: LoginComponent,}
 // {
             //     path: '', component: AppLayoutComponent,
             //     children: [
