@@ -5,7 +5,6 @@ import com.ps.demo.model.Worker;
 import com.ps.demo.repo.WorkerRepo;
 import com.ps.demo.service.WorkerService;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -21,7 +20,7 @@ public class WorkerServiceImpl implements WorkerService {
     @Override
     public Worker createWorker(Worker worker) {
         worker.setId(generateId());
-        worker.setImageUrl(setWorkerImageUrl());
+       // worker.setImageUrl(setWorkerImageUrl());
         return workerRepo.save(worker);
     }
 
@@ -53,7 +52,12 @@ public class WorkerServiceImpl implements WorkerService {
 
 
     private String generateId() {
-        return null;
+        StringBuilder id = new StringBuilder();
+        String chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        for ( int i = 0; i < 5; i++ ) {
+            id.append(chars.charAt((int) Math.floor(Math.random() * chars.length())));
+        }
+        return id.toString();
     }
 
     private String setWorkerImageUrl() {
