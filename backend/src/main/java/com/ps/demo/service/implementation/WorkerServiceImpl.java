@@ -19,7 +19,7 @@ public class WorkerServiceImpl implements WorkerService {
 
     @Override
     public Worker createWorker(Worker worker) {
-        worker.setId(generateId());
+        worker.setId(generateId(worker.getFirstName(),worker.getLastName()));
        // worker.setImageUrl(setWorkerImageUrl());
         return workerRepo.save(worker);
     }
@@ -51,13 +51,8 @@ public class WorkerServiceImpl implements WorkerService {
     }
 
 
-    private String generateId() {
-        StringBuilder id = new StringBuilder();
-        String chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-        for ( int i = 0; i < 5; i++ ) {
-            id.append(chars.charAt((int) Math.floor(Math.random() * chars.length())));
-        }
-        return id.toString();
+    private String generateId(String firstName,String lastName) {
+        return 'W' + firstName + 'W' + lastName;
     }
 
     private String setWorkerImageUrl() {

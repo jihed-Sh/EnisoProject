@@ -12,19 +12,24 @@ import { IconService } from './demo/service/icon.service';
 import { NodeService } from './demo/service/node.service';
 import { PhotoService } from './demo/service/photo.service';
 import { HomepageComponent } from './pages/homepage/homepage.component';
+import { HttpClientModule} from "@angular/common/http";
+import {WorkerService} from "./services/worker-services/workerService";
+import { WorkerComponent } from './pages/worker/worker.component';
+import { WorkerLayoutComponent } from './worker-layout/worker-layout.component';
 
 @NgModule({
     declarations: [
-        AppComponent, NotfoundComponent, HomepageComponent
+        AppComponent, NotfoundComponent, HomepageComponent, WorkerComponent, WorkerLayoutComponent
     ],
     imports: [
         AppRoutingModule,
-        AppLayoutModule
-    ],
+        AppLayoutModule,
+        HttpClientModule,
+        ],
     providers: [
         { provide: LocationStrategy, useClass: HashLocationStrategy },
         CountryService, CustomerService, EventService, IconService, NodeService,
-        PhotoService, ProductService
+        PhotoService, ProductService,WorkerService
     ],
     bootstrap: [AppComponent]
 })

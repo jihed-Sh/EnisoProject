@@ -21,7 +21,7 @@ public class Worker {
     private String lastName;
     @Column(unique = true)
     private String email;
-    private int Age;
+    private int age;
     private String location;
     private LocalDateTime birthdate;
     private WorkTypes workTypes;
