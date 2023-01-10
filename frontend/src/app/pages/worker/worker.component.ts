@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./worker.component.scss']
 })
 export class WorkerComponent implements OnInit {
-
+        available:boolean=true;
   constructor() { }
 
   ngOnInit(): void {

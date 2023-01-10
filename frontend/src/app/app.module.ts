@@ -16,16 +16,35 @@ import { HttpClientModule} from "@angular/common/http";
 import {WorkerService} from "./services/worker-services/workerService";
 import { WorkerComponent } from './pages/worker/worker.component';
 import { WorkerLayoutComponent } from './worker-layout/worker-layout.component';
+import {InputSwitchModule} from "primeng/inputswitch";
+import {FormsModule} from "@angular/forms";
+import {ButtonModule} from "primeng/button";
+import {ChipModule} from "primeng/chip";
+import {FindWorkComponent} from "./pages/find-work/find-work.component";
+import {DataViewModule} from "primeng/dataview";
+import {InputTextModule} from "primeng/inputtext";
+import {DropdownModule} from "primeng/dropdown";
+import {RatingModule} from "primeng/rating";
+import {RippleModule} from "primeng/ripple";
 
 @NgModule({
     declarations: [
-        AppComponent, NotfoundComponent, HomepageComponent, WorkerComponent, WorkerLayoutComponent
+        AppComponent, NotfoundComponent, HomepageComponent, WorkerComponent, WorkerLayoutComponent, FindWorkComponent
     ],
     imports: [
         AppRoutingModule,
         AppLayoutModule,
         HttpClientModule,
-        ],
+        InputSwitchModule,
+        FormsModule,
+        ButtonModule,
+        ChipModule,
+        DataViewModule,
+        InputTextModule,
+        DropdownModule,
+        RatingModule,
+        RippleModule,
+    ],
     providers: [
         { provide: LocationStrategy, useClass: HashLocationStrategy },
         CountryService, CustomerService, EventService, IconService, NodeService,

@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { NotfoundComponent } from './demo/components/notfound/notfound.component';
 import { AppLayoutComponent } from "./layout/app.layout.component";
 import {WorkerComponent} from "./pages/worker/worker.component";
+import {FindWorkComponent} from "./pages/find-work/find-work.component";
 
 @NgModule({
     imports: [
@@ -17,7 +18,8 @@ import {WorkerComponent} from "./pages/worker/worker.component";
                     { path: 'utilities', loadChildren: () => import('./demo/components/utilities/utilities.module').then(m => m.UtilitiesModule) },
                     { path: 'documentation', loadChildren: () => import('./demo/components/documentation/documentation.module').then(m => m.DocumentationModule) },
                     { path: 'blocks', loadChildren: () => import('./demo/components/primeblocks/primeblocks.module').then(m => m.PrimeBlocksModule) },
-                    { path: 'worker',component:WorkerComponent},
+                    { path: 'worker/profile',component:WorkerComponent},
+                    { path: 'find-work',component:FindWorkComponent},
                     { path: 'pages', loadChildren: () => import('./demo/components/pages/pages.module').then(m => m.PagesModule) }
                 ]
             },
