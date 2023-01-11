@@ -1,6 +1,6 @@
 import {WorkTypes} from "../../enums/worker.enum";
 
-interface Worker {
+export interface Worker {
     firstName?: String;
     lastName?: String;
     email?: String;

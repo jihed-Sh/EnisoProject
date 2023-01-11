@@ -6,8 +6,8 @@
                 <img [src]="'../../../assets/worker.png'" [alt]="'worker'" width="100" height="100"  />
             </div>
             <div class="col-9">
-                <h2><b>Elon Musk</b></h2> <i></i>
-                <h4>Silicon Valley,USA</h4>
+                <h2><b>{{worker?.firstName}} {{worker?.lastName}}</b></h2> <i></i>
+                <h4>{{worker?.location}}</h4>
                 <i></i>
                 <p-inputSwitch [(ngModel)]="available"></p-inputSwitch>
             </div>
@@ -39,10 +39,7 @@
             <div class="card">
                 <h3>Builder</h3>   <b>20 DT/hour</b>
                 <p>
-                    I am Jihed Ben Zarb , an engineering student .
-                    I like programming, engineering and problem solving.
-                    and I am aiming to have a great impact in the IT field, and be one
-                    of its brightest people .
+                    {{worker?.description}}
                 </p>
                 <h3>Work History</h3><i></i>
                 <p>No work yet. Once you start getting hired on Tunisia Service, your work with clients will show up here.</p>

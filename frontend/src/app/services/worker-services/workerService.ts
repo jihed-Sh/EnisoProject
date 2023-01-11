@@ -1,6 +1,7 @@
 import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {Observable} from "rxjs";
+import {Worker} from "../../model/worker/worker";
 
 @Injectable()
 export class WorkerService {
@@ -10,7 +11,7 @@ export class WorkerService {
     }
 
     findWorkers(): Observable<Worker[]> {
-        return this.http.get<Worker[]>(this.apiUrl + '/worker/find')
+        return this.http.get<Worker[]>('http://localhost:8080/worker/find')
     }
 
     findWorkersByWorkType(): Observable<Worker[]> {

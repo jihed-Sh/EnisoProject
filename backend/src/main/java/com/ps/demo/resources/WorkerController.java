@@ -11,6 +11,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/worker")
 @RequiredArgsConstructor
+@CrossOrigin(origins = "http://localhost:4200")
 public class WorkerController {
     private  final WorkerServiceImpl workerService;
     @GetMapping("/find")
@@ -21,6 +22,7 @@ public class WorkerController {
     public List<Worker> findWorkersByWorkType(@RequestBody WorkTypes workType){
         return workerService.findWorkersByWorkType(workType);
     }
+
     @GetMapping("/profile/{id}")
     public Worker getWorker(@PathVariable String id){
         return workerService.getWorker(id);
